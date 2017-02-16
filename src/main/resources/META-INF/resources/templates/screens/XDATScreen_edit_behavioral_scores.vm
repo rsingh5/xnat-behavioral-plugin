@@ -1,0 +1,169 @@
+$page.setTitle("BehavioralData")
+$page.setLinkColor($ui.alink)
+$page.setVlinkColor($ui.vlink)
+<script type="text/javascript">
+window.currentID="$!om.getId()";
+    #if($om.getProject())
+     #if($om.getProject().equals(""))
+window.currentProject="$!project";
+     #else
+window.currentProject="$!om.getProject()";
+     #end
+    #else
+window.currentProject="$!project";
+    #end
+
+window.currentSubject="$!om.getSubjectId()";
+window.currentLabel="$!om.getLabel()";
+</script>
+#if ($data.message)
+<div class="error">$data.message</div>
+#end
+<div id="behavioralAssessmentFormDiv">
+<form ID="behavioralAssessmentForm" name="behavioralAssessmentForm" method="post" action="$link.setAction("ModifySubjectAssessorData")">
+    <input type="hidden" name="project" value="$!{project}">
+    <input type="hidden" name="part_id" value="$!{subjectId}">
+    <input type='hidden' name='behavioral:scores/ID' value='$!item.getProperty("ID")'/>
+    <input type="hidden" name="behavioral:scores/project" value='$!{project}'/>
+    <input type='hidden' name='behavioral:scores/subject_ID' value='$!{subjectId}'/>
+    <input type='hidden' name='behavioral:scores/label' value='$!label'/>
+    <input type="hidden" name="behavioral:scores.date.month" id="behavioral:scores.date.month" value=""/>
+    <input type="hidden" name="behavioral:scores.date.date" id="behavioral:scores.date.date" value=""/>
+    <input type="hidden" name="behavioral:scores.date.year" id="behavioral:scores.date.year" value=""/>
+    <input type="hidden" name="$om.getXSIType()/ID" id="$om.getXSIType()/ID" value="$!om.getId()"/>
+
+    #if($vr)
+    <div class="error">Invalid parameters:<BR>$vr.toHTML()</div>
+    <HR>
+    #end
+
+<table width="100%">
+<tr>
+    <td>
+        <table width="100%">
+            <tr>
+                <td align="left" valign="middle">
+                    <div class="edit_title">scores</div>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+<tr>
+    <td>
+        <table width="100%">
+            <tr>
+                <td valign="top" colspan=2>
+                    <table>
+                        <tr>
+                            <td colspan="2">#parse("/screens/EditProjectSpecificFields.vm")</td>
+                        </tr>
+                     	<tr>
+                             #formLabel("SATScore")
+                             <td>
+                                 #xdatTextBox("behavioral:scores/SATScore" $item "" $vr)
+                             </td>
+                         </tr>
+                         <tr>
+                             #formLabel("ACTScore")
+                             <td>
+                                  #xdatTextBox("behavioral:scores/ACTScore" $item "" $vr)
+                             </td>
+                         </tr>
+                         <tr>
+                             #formLabel("VocabScore")
+                             <td>
+                                   #xdatTextBox("behavioral:scores/VocabScore" $item "" $vr)
+                             </td>
+                         </tr>
+                         <tr>
+                             #formLabel("VocabScaledScore")
+                             <td>
+                                   #xdatTextBox("behavioral:scores/VocabScaledScore" $item "" $vr)
+                             </td>
+                         </tr>
+                         <tr>
+                             #formLabel("FiguresAScore")
+                             <td>
+                                   #xdatTextBox("behavioral:scores/FiguresAScore" $item "" $vr)
+                             </td>
+                         </tr>
+                         <tr>
+                             #formLabel("FiguresBScore")
+                             <td>
+                                   #xdatTextBox("behavioral:scores/FiguresBScore" $item "" $vr)
+                             </td>
+                         </tr>
+                         <tr>
+                             #formLabel("FiguresScore")
+                             <td>
+                                   #xdatTextBox("behavioral:scores/FiguresScore" $item "" $vr)
+                             </td>
+                         </tr>
+                         <tr>
+                             #formLabel("FiguresAScaledScore")
+                             <td>
+                                   #xdatTextBox("behavioral:scores/FiguresAScaledScore" $item "" $vr)
+                             </td>
+                         </tr>
+                      
+                         <tr>
+                             #formLabel("FiguresBScaledScore")
+                             <td>
+                                   #xdatTextBox("behavioral:scores/FiguresBScaledScore" $item "" $vr)
+                             </td>
+                         </tr>
+                         <tr>
+                             #formLabel("FiguresScaledScore")
+                             <td>
+                                   #xdatTextBox("behavioral:scores/FiguresScaledScore" $item "" $vr)
+                             </td>
+                         </tr>
+                         <tr>
+                             #formLabel("LSATAScore")
+                             <td>
+                                   #xdatTextBox("behavioral:scores/LSATAScore" $item "" $vr)
+                             </td>
+                         </tr>
+                         <tr>
+                             #formLabel("LSATBScore")
+                             <td>
+                                   #xdatTextBox("behavioral:scores/LSATBScore" $item "" $vr)
+                             </td>
+                         </tr>
+                         <tr>
+                             #formLabel("LSATScore")
+                             <td>
+                                   #xdatTextBox("behavioral:scores/LSATScore" $item "" $vr)
+                             </td>
+                         </tr>
+                     </table>
+                 </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+<tr>
+    <td>
+        #xdatEditProps($item $edit_screen)
+    </td>
+</tr>
+<tr>
+    <td colspan=2 align=left>
+        <input type="button" onclick="validateForm();" name="eventSubmit_doInsert" value="Submit"/>
+    </td>
+</tr>
+</table>
+</form>
+</div>
+
+<script type="text/javascript">
+    function validateForm() {
+        var today = new Date();
+        document.getElementById('behavioral:scores.date.month').value = today.getMonth();
+        document.getElementById('behavioral:scores.date.date').value = today.getDate();
+        document.getElementById('behavioral:scores.date.year').value = today.getFullYear();
+        document.behavioralAssessmentForm.submit();
+        return true;
+    }
+</script>
