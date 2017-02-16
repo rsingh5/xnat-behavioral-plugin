@@ -47,15 +47,15 @@ public class XDATScreen_edit_behavioral_scores extends EditSubjectAssessorScreen
 
             if (!context.containsKey("label")) {
                 final XnatSubjectdata               subject    = XnatSubjectdata.getXnatSubjectdatasById(subjectId, XDAT.getUserDetails(), false);
-                final List<XnatSubjectassessordata> biosamples = subject.getExperiments_experiment(BehavioralScores.SCHEMA_ELEMENT_NAME);
+                final List<XnatSubjectassessordata> behavioralScores = subject.getExperiments_experiment(BehavioralScores.SCHEMA_ELEMENT_NAME);
                 final String subjectLabel = subject.getLabel();
                 int index = 1;
                 String label = null;
                 while (label == null) {
                     final String test = subjectLabel + "_Behavioral_" + String.format("%02d", index);
                     boolean matches = false;
-                    for (final XnatSubjectassessordata biosample : biosamples) {
-                        if (biosample.getLabel().equals(test)) {
+                    for (final XnatSubjectassessordata behavioral : behavioralScores) {
+                        if (behavioral.getLabel().equals(test)) {
                             matches = true;
                             index++;
                             break;

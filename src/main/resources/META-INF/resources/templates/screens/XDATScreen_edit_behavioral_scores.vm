@@ -43,7 +43,7 @@ window.currentLabel="$!om.getLabel()";
         <table width="100%">
             <tr>
                 <td align="left" valign="middle">
-                    <div class="edit_title">scores</div>
+                    <div class="edit_title">Scores</div>
                 </td>
             </tr>
         </table>

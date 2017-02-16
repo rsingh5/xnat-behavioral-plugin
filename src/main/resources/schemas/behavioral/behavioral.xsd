@@ -14,6 +14,7 @@
 							<xs:documentation>SATScore</xs:documentation>
 						</xs:annotation>
 						<xs:simpleType>
+							<!-- this can be used to add validations-->
 							<xs:restriction base="xs:string"/>
 						</xs:simpleType>
 					</xs:element>
