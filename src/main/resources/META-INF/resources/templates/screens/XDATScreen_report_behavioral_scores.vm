@@ -158,9 +158,9 @@ $page.setVlinkColor($ui.vlink)
                 </tr>
                 <tr>
                     <td>&nbsp;</td>
-                    #formLabel("Shipley_to_Abst")
+                    #formLabel("ShipleyTOAbst")
                     <td valign="top">
-                        $!item.getProperty("behavioral:scores/Shipley_to_Abst")
+                        $!item.getProperty("behavioral:scores/ShipleyTOAbst")
                     </td>
                 </tr>
                 <tr>
