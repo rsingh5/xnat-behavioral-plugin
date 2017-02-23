@@ -146,7 +146,14 @@
 							<xs:restriction base="xs:string"/>
 						</xs:simpleType>
 					</xs:element>
-					<xs:element name="ShipleyTOAbst" type="xs:string" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="ShipleyTOAbst" type="xs:string" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Shipley2AbstTotal</xs:documentation>
+						</xs:annotation>
+						<xs:simpleType>
+							<xs:restriction base="xs:string"/>
+						</xs:simpleType>
+					</xs:element>
 					<xs:element name="MR" type="xs:string" minOccurs="0" maxOccurs="1">
 						<xs:annotation>
 							<xs:documentation>MR</xs:documentation>
