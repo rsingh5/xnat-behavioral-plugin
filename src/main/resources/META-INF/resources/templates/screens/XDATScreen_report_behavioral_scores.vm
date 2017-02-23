@@ -121,11 +121,60 @@ $page.setVlinkColor($ui.vlink)
                     $!item.getProperty("behavioral:scores/LSATBScore")
                     </td>
                 </tr>
-                <tr>
+                 <tr>
                     <td>&nbsp;</td>
                     #formLabel("LSATScore")
                     <td valign="top">
                         $!item.getProperty("behavioral:scores/LSATScore")
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    #formLabel("LetterSeries")
+                    <td valign="top">
+                        $!item.getProperty("behavioral:scores/LetterSeries")
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    #formLabel("LetterSeriesScaled")
+                    <td valign="top">
+                        $!item.getProperty("behavioral:scores/LetterSeriesScaled")
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    #formLabel("NumberSeries")
+                    <td valign="top">
+                        $!item.getProperty("behavioral:scores/NumberSeries")
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    #formLabel("NumberSeriesScaled")
+                    <td valign="top">
+                        $!item.getProperty("behavioral:scores/NumberSeriesScaled")
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    #formLabel("Shipley_to_Abst")
+                    <td valign="top">
+                        $!item.getProperty("behavioral:scores/Shipley_to_Abst")
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    #formLabel("MR")
+                    <td valign="top">
+                        $!item.getProperty("behavioral:scores/MR")
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    #formLabel("MRScaled")
+                    <td valign="top">
+                        $!item.getProperty("behavioral:scores/MRScaled")
                     </td>
                 </tr>
                 <tr>

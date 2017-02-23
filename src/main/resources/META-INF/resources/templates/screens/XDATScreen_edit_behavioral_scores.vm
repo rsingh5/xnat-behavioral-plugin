@@ -137,6 +137,48 @@ window.currentLabel="$!om.getLabel()";
                                    #xdatTextBox("behavioral:scores/LSATScore" $item "" $vr)
                              </td>
                          </tr>
+                         <tr>
+                             #formLabel("LetterSeries")
+                             <td>
+                                   #xdatTextBox("behavioral:scores/LetterSeries" $item "" $vr)
+                             </td>
+                         </tr>
+                         <tr>
+                             #formLabel("LetterSeriesScaled")
+                             <td>
+                                   #xdatTextBox("behavioral:scores/LetterSeriesScaled" $item "" $vr)
+                             </td>
+                         </tr>
+                         <tr>
+                             #formLabel("NumberSeries")
+                             <td>
+                                   #xdatTextBox("behavioral:scores/NumberSeries" $item "" $vr)
+                             </td>
+                         </tr>
+                         <tr>
+                             #formLabel("NumberSeriesScaled")
+                             <td>
+                                   #xdatTextBox("behavioral:scores/NumberSeriesScaled" $item "" $vr)
+                             </td>
+                         </tr>
+                         <tr>
+                             #formLabel("ShipleyTOAbst")
+                             <td>
+                                   #xdatTextBox("behavioral:scores/ShipleyTOAbst" $item "" $vr)
+                             </td>
+                         </tr>
+                         <tr>
+                             #formLabel("MR")
+                             <td>
+                                   #xdatTextBox("behavioral:scores/MR" $item "" $vr)
+                             </td>
+                         </tr>
+                         <tr>
+                             #formLabel("MRScaled")
+                             <td>
+                                   #xdatTextBox("behavioral:scores/MRScaled" $item "" $vr)
+                             </td>
+                         </tr>
                      </table>
                  </td>
             </tr>
